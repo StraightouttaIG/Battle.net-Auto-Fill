@@ -10,7 +10,7 @@ The tool operates in the background. When you open Battle.net, the tool starts r
 
 You can store an unlimited number of accounts, each with its own unique keyword.
 
-**Video DEMO**
+# Video DEMO
 
 https://github.com/StraightouttaIG/Battle.net-Auto-Fill/assets/72385671/b15e25c0-1cb6-40ce-ab21-79e5f838aeac
 
