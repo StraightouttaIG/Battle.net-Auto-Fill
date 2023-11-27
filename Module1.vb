@@ -136,7 +136,6 @@ Module Module1
                             Dim Email As String = emails(triggerWords.IndexOf(matchingNickname))
                             Dim Password As String = Encryption.AES_Decrypt(passwords(triggerWords.IndexOf(matchingNickname)), AES_PASSWORD)
 
-
                             Dim inputSimulator As New InputSimulator()
 
                             'Select all (CTRL + A)
