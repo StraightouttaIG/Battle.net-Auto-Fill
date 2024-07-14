@@ -26,7 +26,8 @@ This tool is 100% offline and open-source. Passwords are encrypted and then stor
 
 # Video DEMO (v1.1.0)
 
-https://github.com/StraightouttaIG/Battle.net-Auto-Fill/assets/72385671/7c9462b8-be91-410b-8ece-caea378271e5
+Link: https://www.youtube.com/watch?v=NICBU8MA1Aw
+
 
 # Resources Usage after Patch (v1.1.1)
 
