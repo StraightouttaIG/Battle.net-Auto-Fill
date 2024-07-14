@@ -19,6 +19,11 @@ The tool operates in the background. When you open Battle.net, the tool starts r
 
 You can store an unlimited number of accounts, each with its own unique keyword.
 
+
+**Privacy/Security:**
+
+This tool is 100% offline and open-source. Passwords are encrypted and then stored locally.
+
 # Video DEMO (v1.1.0)
 
 https://github.com/StraightouttaIG/Battle.net-Auto-Fill/assets/72385671/7c9462b8-be91-410b-8ece-caea378271e5
