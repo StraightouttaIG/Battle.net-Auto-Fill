@@ -10,7 +10,6 @@ Module Module1
     Dim users As New List(Of String)
     Dim logs As New Text.StringBuilder
     Dim _ex As String
-    Dim sw As New Stopwatch
     Dim txt As String = String.Empty
     Dim threadSleep As Integer = 75
     Sub Main()
@@ -56,9 +55,9 @@ Module Module1
                     If Encryption.AES_Decrypt(password, AES_PASSWORD) = Nothing Then
                         password = Encryption.AES_Encrypt(password, AES_PASSWORD)
                     End If
-                    usersEncrypted.Add($"{email}|{triggerWord}|{password}")
-                    IO.File.WriteAllLines("users.txt", usersEncrypted.ToList)
-                Next
+                    usersEncrypted.Add($"{email}|{triggerWord}|{password}")                 
+                 Next
+                         IO.File.WriteAllLines("users.txt", usersEncrypted.ToList)        
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -132,12 +131,11 @@ Module Module1
 
                         If Not String.IsNullOrEmpty(matchingNickname) Then
                             If triggerWords.Count < 1 Then Exit Sub
-
+                                                
                             txt = Nothing
-                            sw.Start()
+                                                
                             Dim Email As String = emails(triggerWords.IndexOf(matchingNickname))
                             Dim Password As String = Encryption.AES_Decrypt(passwords(triggerWords.IndexOf(matchingNickname)), AES_PASSWORD)
-
                             Dim inputSimulator As New InputSimulator()
 
                             'Select all (CTRL + A)
@@ -145,11 +143,13 @@ Module Module1
 
                             'Input Email
                             inputSimulator.Keyboard.TextEntry(Email)
-
+                                                
+                            Threading.Thread.Sleep(5)
+                                                
                             'Switch to password input
                             inputSimulator.Keyboard.KeyPress(Native.VirtualKeyCode.TAB)
 
-                            Threading.Thread.Sleep(1)
+                            Threading.Thread.Sleep(2)
 
                             'Input Password
                             inputSimulator.Keyboard.TextEntry(Password)
