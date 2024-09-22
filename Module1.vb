@@ -144,12 +144,12 @@ Module Module1
                             'Input Email
                             inputSimulator.Keyboard.TextEntry(Email)
                                                 
-                            Threading.Thread.Sleep(5)
+                            Threading.Thread.Sleep(15)
                                                 
                             'Switch to password input
                             inputSimulator.Keyboard.KeyPress(Native.VirtualKeyCode.TAB)
 
-                            Threading.Thread.Sleep(2)
+                            Threading.Thread.Sleep(5)
 
                             'Input Password
                             inputSimulator.Keyboard.TextEntry(Password)
